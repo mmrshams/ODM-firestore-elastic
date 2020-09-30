@@ -1,0 +1,39 @@
+{
+  "name": "tipi-odm",
+  "version": "7.2.0",
+  "description": "",
+  "main": "Main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "doc": "rm -fr ./docs && docco ./*.js README.md -t ./misc/template/docco.jst -c ./misc/template/docco.css && cp -r ./misc/template/public ./docs",
+    "github-pages": "npm run doc && gh-pages-deploy",
+    "doc-generate": "gitbook-comment generate -p ./",
+    "doc-publish": "gitbook-comment publish -p ./ -i node_modules,playground",
+    "doc-clean-up": "gitbook-comment clean-up -p ./"
+  },
+  "author": "Hadi Abedi",
+  "license": "ISC",
+  "dependencies": {
+    "@elastic/elasticsearch": "^7.1.0",
+    "@google-cloud/firestore": "2.1.0",
+    "algoliasearch": "^3.33.0",
+    "bluebird": "^3.5.5",
+    "boom": "^7.3.0",
+    "cron": "^1.8.2",
+    "joi": "^14.3.1",
+    "json-mask": "^0.3.8",
+    "lodash": "^4.17.11",
+    "moment": "^2.24.0",
+    "tipi-oops": "^2.0.0",
+    "uuid": "^3.3.2",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "docco": "^0.8.0",
+    "gh-pages-deploy": "^0.5.1",
+    "gitbook-comment": "^1.0.6"
+  },
+  "gh-pages-deploy": {
+    "staticpath": "docs"
+  }
+}
